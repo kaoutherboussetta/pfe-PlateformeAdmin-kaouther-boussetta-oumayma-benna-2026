@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Trig-Essalama
 
 ### La sécurité des citoyens, notre priorité
@@ -98,3 +99,7 @@ Contribuer à la réduction des risques routiers et à l'amélioration de la sé
 ## Année Universitaire
 
 2025 / 2026
+=======
+# projets-etudiants-2026
+Dépôt des projets étudiants
+>>>>>>> fe5235d29c584781bf3eccf261dbe26722008e35
