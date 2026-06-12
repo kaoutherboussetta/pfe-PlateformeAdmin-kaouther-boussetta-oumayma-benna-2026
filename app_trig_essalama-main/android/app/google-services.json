@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "575819831562",
+    "project_id": "trigessalamaapp",
+    "storage_bucket": "trigessalamaapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575819831562:android:bb7a3d2006ec0cf64d42f3",
+        "android_client_info": {
+          "package_name": "com.trigressalama.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575819831562-imrr8u7d98lrhcct53fgcc2saj9m2iql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUYxPOXsx72GpsEol4YRWBUfCPoJaT184"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575819831562-imrr8u7d98lrhcct53fgcc2saj9m2iql.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "575819831562-rn6ml7jcm5dc4q1vu8it9as5npm3ft3v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appTrigEssalama"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
