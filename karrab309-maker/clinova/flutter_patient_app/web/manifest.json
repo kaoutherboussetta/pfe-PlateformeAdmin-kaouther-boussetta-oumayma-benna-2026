@@ -1,9 +1,0 @@
-{
-    "name": "Suivi Patient",
-    "short_name": "Suivi Patient",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#1565c0",
-    "theme_color": "#1565c0",
-    "description": "Application de suivi médical post-opératoire pour les patients."
-}
