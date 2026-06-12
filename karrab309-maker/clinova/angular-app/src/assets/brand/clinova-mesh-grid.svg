@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160">
-  <defs>
-    <pattern id="cg" width="16" height="16" patternUnits="userSpaceOnUse">
-      <path d="M16 0H0v16" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.75"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#cg)"/>
-</svg>
