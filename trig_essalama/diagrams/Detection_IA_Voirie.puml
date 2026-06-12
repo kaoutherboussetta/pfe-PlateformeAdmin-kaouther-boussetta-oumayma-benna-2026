@@ -1,0 +1,113 @@
+@startuml Detection_IA_Voirie
+
+title Processus intelligent de détection des dégradations de voirie
+
+autonumber
+
+' =====================================================
+'                 STYLE CONFIGURATION
+' =====================================================
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam monochrome true
+
+skinparam DefaultFontSize 14
+skinparam TitleFontSize 20
+skinparam SequenceMessageFontSize 13
+
+skinparam SequenceMessageAlign center
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+skinparam ArrowColor black
+
+' Formes d'analyse UML (icônes unifiées noir & blanc)
+skinparam boundary {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam control {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam entity {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam note {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+' =====================================================
+'     PARTICIPANTS — stéréotypes UML (Robustness)
+' =====================================================
+' boundary  = barre + cercle  (interfaces / capteurs externes)
+' control   = cercle + flèche (logique, calculs, IA)
+' entity    = cercle + trait  (stockage persistant MongoDB)
+
+boundary "Dispositif de capture\nvidéo" as Cam
+
+boundary "Module de traitement\nvidéo" as Video
+boundary "Service de\nlocalisation GPS" as GPS
+
+control "Modèle d'intelligence\nartificielle YOLO" as YOLO
+
+entity "Base de données\nMongoDB" as Mongo
+
+' =====================================================
+'                       SCÉNARIO
+' =====================================================
+
+Cam -> Video : Transmission du flux vidéo
+
+loop Analyse continue en temps réel
+
+    Video -> YOLO : Analyse des images capturées
+    activate YOLO
+    YOLO --> Video : Résultat de détection\n(type de dégradation,\nniveau de confiance)
+    deactivate YOLO
+
+    alt Aucune anomalie détectée
+
+        Video --> Video : Poursuite de l'analyse
+
+    else Dégradation détectée
+
+        Video -> GPS : Récupération des\ncoordonnées géographiques
+        activate GPS
+        GPS --> Video : Latitude, longitude,\nprécision GPS
+        deactivate GPS
+
+        Video -> Video : Génération des informations\nanalytiques
+
+        note right of Video
+        • Description du danger
+        • Score de risque
+        • Niveau de gravité
+        • Confiance de l'IA
+        end note
+
+        Video -> Mongo : Enregistrement des données\nrelatives à la dégradation
+        activate Mongo
+
+        opt Dégradation similaire existante
+
+            Mongo --> Video : Mise à jour des\ninformations existantes
+
+        end
+
+        Video -> Mongo : Génération d'une alerte\nprioritaire
+        deactivate Mongo
+
+    end
+
+end
+
+@enduml

@@ -1,0 +1,82 @@
+@startuml Gestion_Admin_Voirie
+
+title Processus de gestion des dégradations de voirie
+
+autonumber
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam monochrome true
+
+skinparam DefaultFontSize 14
+skinparam TitleFontSize 20
+skinparam SequenceMessageFontSize 13
+skinparam SequenceMessageAlign center
+skinparam ParticipantPadding 20
+skinparam ArrowColor black
+
+skinparam boundary {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam control {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam entity {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+' boundary  = barre + cercle   (interfaces / acteurs externes)
+' control   = cercle + flèche  (logique applicative)
+' entity    = cercle + trait   (données persistantes / MongoDB)
+
+boundary "Administrateur\nautoritaire" as Admin
+
+boundary "Tableau de bord\nLaravel" as Dash
+
+control "API de réception\ndes détections IA" as Api
+
+entity "Base de données\nMongoDB" as Mongo
+
+boundary "Service externe\nd'intelligence artificielle" as IA
+
+IA -> Api : Transmission des données\nde détection
+
+Api -> Api : Validation des données reçues
+
+Api -> Mongo : Enregistrement des\ninformations de dégradation
+
+Api --> IA : Confirmation de réception
+
+Admin -> Dash : Authentification et accès\nau tableau de bord
+
+Dash -> Mongo : Consultation des\nproblèmes enregistrés
+
+Mongo --> Dash : Retour des données\nrelatives aux dégradations
+
+Dash -> Dash : Traitement et organisation\ndes données affichées
+
+Dash --> Admin : Affichage des statistiques,\ncartes et listes des incidents
+
+Admin -> Dash : Modification du statut\nd'une dégradation
+
+Dash -> Mongo : Mise à jour du statut
+
+Mongo --> Dash : Confirmation de mise à jour
+
+Admin -> Dash : Affectation d'une équipe\ntechnique et estimation du coût
+
+Dash -> Mongo : Mise à jour des informations\nopérationnelles
+
+Mongo --> Dash : Confirmation de traitement
+
+Dash --> Admin : Actualisation du tableau\nde bord
+
+@enduml

@@ -1,0 +1,65 @@
+@startuml CU_Detection_IA_Voirie
+
+title Cas d'utilisation — Détection intelligente des dégradations de voirie
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam monochrome true
+
+skinparam actor {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam usecase {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam rectangle {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+left to right direction
+
+actor "Dispositif de capture\nvidéo" as Cam
+actor "Terminal mobile\n(GPS)" as Phone
+
+rectangle "Système de détection IA\n(Trig-Essalama AI)" as Sys {
+
+    together {
+        usecase "UC1 — Analyser le flux vidéo\nen temps réel" as UC1
+        usecase "UC2 — Détecter une dégradation\n(nid-de-poule, fissure)" as UC2
+        usecase "UC3 — Localiser géographiquement\nla dégradation" as UC3
+        usecase "UC4 — Calculer le score de risque,\nla gravité et la confiance IA" as UC4
+        usecase "UC5 — Enregistrer la dégradation\ndans MongoDB" as UC5
+        usecase "UC6 — Mettre à jour une dégradation\nsimilaire existante" as UC6
+        usecase "UC7 — Générer une alerte\nprioritaire" as UC7
+    }
+
+}
+
+Cam --> UC1
+UC1 ..> UC2 : <<include>>
+Cam --> UC2
+
+Phone --> UC3
+UC2 ..> UC3 : <<include>>
+UC2 ..> UC4 : <<include>>
+UC4 ..> UC5 : <<include>>
+UC5 ..> UC6 : <<extend>>
+UC5 ..> UC7 : <<include>>
+
+' Forcer un placement horizontal des cas d'utilisation
+UC1 -[hidden]right-> UC2
+UC2 -[hidden]right-> UC3
+UC3 -[hidden]right-> UC4
+UC4 -[hidden]right-> UC5
+UC5 -[hidden]right-> UC6
+UC6 -[hidden]right-> UC7
+
+@enduml

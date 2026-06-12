@@ -1,0 +1,66 @@
+@startuml CU_Gestion_Admin_Voirie
+
+title Cas d'utilisation — Gestion administrative des dégradations détectées
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam monochrome true
+
+skinparam actor {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam usecase {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+skinparam rectangle {
+    BackgroundColor white
+    BorderColor black
+    FontColor black
+}
+
+left to right direction
+
+actor "Administrateur\nautoritaire" as Admin
+actor "Service externe\nd'intelligence artificielle" as IA
+
+rectangle "Système de gestion\n(Trig-Essalama — Laravel)" as Sys {
+
+    together {
+        usecase "UC1 — Transmettre les données\nde détection IA" as UC1
+        usecase "UC2 — Valider et enregistrer\nune dégradation" as UC2
+        usecase "UC3 — S'authentifier et accéder\nau tableau de bord" as UC3
+        usecase "UC4 — Consulter les dégradations\n(liste, carte, statistiques)" as UC4
+        usecase "UC5 — Modifier le statut\nd'une dégradation" as UC5
+        usecase "UC6 — Affecter une équipe\nd'intervention" as UC6
+        usecase "UC7 — Estimer le coût\nde réparation" as UC7
+    }
+
+}
+
+IA --> UC1
+UC1 ..> UC2 : <<include>>
+
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC7
+
+UC3 ..> UC4 : <<include>>
+UC6 ..> UC7 : <<include>>
+
+' Forcer un placement horizontal des cas d'utilisation
+UC1 -[hidden]right-> UC2
+UC2 -[hidden]right-> UC3
+UC3 -[hidden]right-> UC4
+UC4 -[hidden]right-> UC5
+UC5 -[hidden]right-> UC6
+UC6 -[hidden]right-> UC7
+
+@enduml

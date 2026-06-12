@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: grand-projet-pfe
+    runtime: docker
+    plan: free
+    rootDir: trig_essalama
+    dockerfilePath: Dockerfile
+    dockerContext: .
+    healthCheckPath: /health.php
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: LOG_CHANNEL
+        value: stderr

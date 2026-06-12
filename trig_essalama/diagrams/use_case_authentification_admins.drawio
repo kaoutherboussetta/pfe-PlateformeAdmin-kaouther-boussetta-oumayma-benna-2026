@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-05-03T12:00:00.000Z" agent="5.0" version="24.7.0" type="device">
+  <diagram id="page-admin-tech" name="CU - Administrateur technique">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="boundary" value="&lt;b&gt;Système d'authentification et d'accès&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;dashed=1;dashPattern=8 8;verticalAlign=top;align=center;fontStyle=0;spacingTop=10;spacingLeft=10;spacingRight=10;spacingBottom=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="460" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="act-tech" value="Administrateur&#xa;technique" style="shape=uml.actor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="160" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="act-mail" value="Service e-mail" style="shape=uml.actor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="180" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc-insc" value="S'inscrire&#xa;(créer un compte)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="70" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc-auth" value="S'authentifier&#xa;(se connecter)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc-mdp" value="Récupérer le mot de passe&#xa;(oubli)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc-tdb" value="Accéder au&#xa;tableau de bord" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.33;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="act-tech" target="uc-insc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="act-tech" target="uc-auth">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.67;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="act-tech" target="uc-mdp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="act-tech" target="uc-tdb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;envoi du lien" style="endArrow=open;dashed=1;html=1;dashPattern=8 8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="uc-mdp" target="act-mail">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="après connexion réussie" style="endArrow=open;dashed=1;html=1;dashPattern=8 8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="uc-auth" target="uc-tdb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-admin-auto" name="CU - Administrateur autoritaire">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="b2" value="&lt;b&gt;Système d'authentification et d'accès&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;dashed=1;dashPattern=8 8;verticalAlign=top;align=center;fontStyle=0;spacingTop=10;spacingLeft=10;spacingRight=10;spacingBottom=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="460" height="320" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2" value="Administrateur&#xa;autoritaire" style="shape=uml.actor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="180" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="m2" value="Service e-mail" style="shape=uml.actor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="200" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="u2-auth" value="S'authentifier&#xa;(se connecter)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="130" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="u2-mdp" value="Récupérer le mot de passe&#xa;(oubli)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="220" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="u2-tdb" value="Accéder au&#xa;tableau de bord" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="310" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="x1" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="a2" target="u2-auth">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x2" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.67;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="a2" target="u2-mdp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x3" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="a2" target="u2-tdb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;envoi du lien" style="endArrow=open;dashed=1;html=1;dashPattern=8 8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="u2-mdp" target="m2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x5" value="après connexion réussie" style="endArrow=open;dashed=1;html=1;dashPattern=8 8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="u2-auth" target="u2-tdb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

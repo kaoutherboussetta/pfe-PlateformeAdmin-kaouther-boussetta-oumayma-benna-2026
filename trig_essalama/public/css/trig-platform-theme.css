@@ -1,0 +1,548 @@
+/**
+ * Thème global Trig-Essalama : bascule clair / sombre via html[data-theme="light|dark"].
+ * Les pages définissent des classes sur <html> : trig-outfit, trig-auth, trig-autoritaire, trig-legacy, trig-auth-gradient, trig-native-light.
+ */
+
+/* ── Contrôle thème (fixe, lisible sur tous fonds) ── */
+.trig-theme-switch {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 11px;
+    pointer-events: auto;
+}
+
+.trig-theme-switch-label {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+html[data-theme="dark"] .trig-theme-switch-label {
+    color: #94a3b8;
+}
+
+html[data-theme="light"] .trig-theme-switch-label {
+    color: #64748b;
+}
+
+.trig-theme-switch-btns {
+    display: flex;
+    gap: 0;
+    padding: 3px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+html[data-theme="light"] .trig-theme-switch-btns {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.trig-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+html[data-theme="light"] .trig-theme-btn {
+    color: #475569;
+}
+
+.trig-theme-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+}
+
+html[data-theme="light"] .trig-theme-btn:hover {
+    background: rgba(15, 23, 42, 0.06);
+    color: #0f172a;
+}
+
+.trig-theme-btn.active {
+    background: rgba(255, 107, 53, 0.25);
+    color: #fff;
+}
+
+html[data-theme="light"] .trig-theme-btn.active {
+    background: rgba(255, 107, 53, 0.18);
+    color: #c2410c;
+}
+
+.trig-theme-icon {
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .trig-theme-btn span:not(.trig-theme-icon) {
+        display: none;
+    }
+    .trig-theme-btn {
+        padding: 8px 10px;
+    }
+}
+
+/* ── Pages type dashboard / profil / admin tech (variables Outfit) ── */
+html.trig-outfit[data-theme="light"] {
+    --orange: #e85a24;
+    --orange-light: #ff9a65;
+    --orange-glow: rgba(232, 90, 36, 0.2);
+    --yellow: #c9a000;
+    --cyan: #0891b2;
+    --green: #059669;
+    --red: #dc2626;
+    --bg: #edf1f8;
+    --bg2: #ffffff;
+    --bg3: #e4e9f2;
+    --surface: rgba(15, 23, 42, 0.05);
+    --surface2: rgba(15, 23, 42, 0.09);
+    --border: rgba(15, 23, 42, 0.1);
+    --border-accent: rgba(232, 90, 36, 0.35);
+    --text: #101828;
+    --text2: #5c6578;
+    --text3: #7a8499;
+}
+
+html.trig-outfit[data-theme="light"] .bg-canvas::before {
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.06) 0%, transparent 65%) !important;
+}
+
+html.trig-outfit[data-theme="light"] .bg-canvas::after {
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 65%) !important;
+}
+
+html.trig-outfit[data-theme="light"] .grid-overlay {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}
+
+/* ── Login / register citoyen (panneau split Space Grotesk) ── */
+html.trig-auth[data-theme="light"] {
+    --neon: #b8860b;
+    --neon2: #e85a24;
+    --dark: #eef2f7;
+    --card: #ffffff;
+    --surface: rgba(15, 23, 42, 0.06);
+    --border: rgba(15, 23, 42, 0.12);
+    --text: #0f172a;
+    --muted: rgba(15, 23, 42, 0.55);
+    --success: #b8860b;
+    --danger: #e85a24;
+}
+
+html.trig-auth[data-theme="light"] .left-panel-overlay {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(255, 215, 0, 0.06) 50%, rgba(255, 107, 53, 0.06) 100%) !important;
+}
+
+html.trig-auth[data-theme="light"] .left-scan-lines {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(15, 23, 42, 0.04) 2px,
+        rgba(15, 23, 42, 0.04) 4px
+    ) !important;
+}
+
+html.trig-auth[data-theme="light"] .brand-tag {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+html.trig-auth[data-theme="light"] .brand-tag span {
+    color: #0f172a !important;
+}
+
+html.trig-auth[data-theme="light"] .title-kicker {
+    color: rgba(15, 23, 42, 0.55) !important;
+}
+
+html.trig-auth[data-theme="light"] .title-main {
+    background: linear-gradient(125deg, #0f172a 0%, #b45309 42%, #ea580c 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: none !important;
+}
+
+html.trig-auth[data-theme="light"] .title-accent {
+    color: rgba(15, 23, 42, 0.78) !important;
+}
+
+html.trig-auth[data-theme="light"] .left-desc {
+    color: rgba(15, 23, 42, 0.82) !important;
+    text-shadow: none !important;
+}
+
+html.trig-auth[data-theme="light"] .left-aurora {
+    opacity: 0.55;
+}
+
+html.trig-auth[data-theme="light"] .feature-item {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.trig-auth[data-theme="light"] .feature-item span {
+    color: #1e293b !important;
+}
+
+html.trig-auth[data-theme="light"] .right-panel {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.99) 0%, #f1f5f9 100%) !important;
+    border-left-color: rgba(15, 23, 42, 0.08) !important;
+    box-shadow: -12px 0 48px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.trig-auth[data-theme="light"] .logo-sm {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.9)) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html.trig-auth[data-theme="light"] .back-btn {
+    background: rgba(15, 23, 42, 0.04) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    color: #64748b !important;
+}
+
+/* ── Profil administrateur autoritaire ── */
+html.trig-autoritaire[data-theme="light"] {
+    --bg: #f0f4fc;
+    --surface: rgba(255, 255, 255, 0.95);
+    --surface-soft: #e8ecf4;
+    --border: rgba(15, 23, 42, 0.1);
+    --accent: #b45309;
+    --accent-2: #1d4ed8;
+    --text: #0f172a;
+    --muted: #64748b;
+    --success: #059669;
+    --shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+html.trig-autoritaire[data-theme="light"] body {
+    background: radial-gradient(circle at 12% 12%, rgba(29, 78, 216, 0.08), transparent 42%),
+        radial-gradient(circle at 85% 88%, rgba(180, 83, 9, 0.08), transparent 36%),
+        linear-gradient(155deg, #f8fafc 0%, #eef2ff 45%, #f1f5f9 100%) !important;
+}
+
+/* ── Auth gradient simple (auth/login, auth/register) ── */
+html.trig-auth-gradient[data-theme="light"] {
+    --ag1: #e8eef7;
+    --ag2: #dce6f5;
+    --ag3: #ebe5f5;
+}
+
+html.trig-auth-gradient[data-theme="light"] body {
+    background: linear-gradient(135deg, var(--ag1), var(--ag2), var(--ag3)) !important;
+}
+
+html.trig-auth-gradient[data-theme="light"] body::before {
+    opacity: 0.35 !important;
+}
+
+/* ── Pages admin legacy (#0a0a0a, cartes sombres) ── */
+html.trig-legacy[data-theme="light"] body {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+html.trig-legacy[data-theme="light"] body::before {
+    opacity: 0.06 !important;
+}
+
+html.trig-legacy[data-theme="light"] body::after {
+    opacity: 0.04 !important;
+}
+
+html.trig-legacy[data-theme="light"] .login-container {
+    background: linear-gradient(180deg, rgba(220, 38, 38, 0.08) 0%, rgba(255, 255, 255, 0.98) 100%) !important;
+    border: 1px solid rgba(220, 38, 38, 0.18) !important;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1) !important;
+}
+
+html.trig-legacy[data-theme="light"] .login-header h1 {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+html.trig-legacy[data-theme="light"] .form-group label,
+html.trig-legacy[data-theme="light"] .remember-me label {
+    color: #334155 !important;
+}
+
+html.trig-legacy[data-theme="light"] .form-group input {
+    background: #f8fafc !important;
+    border-color: rgba(220, 38, 38, 0.2) !important;
+    color: #0f172a !important;
+}
+
+html.trig-legacy[data-theme="light"] .form-group input::placeholder {
+    color: rgba(15, 23, 42, 0.45) !important;
+}
+
+html.trig-legacy[data-theme="light"] .login-header .badge {
+    background: rgba(220, 38, 38, 0.1) !important;
+    color: #b91c1c !important;
+    border-color: rgba(220, 38, 38, 0.25) !important;
+}
+
+html.trig-legacy[data-theme="light"] .card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html.trig-legacy[data-theme="light"] .header {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.12) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
+    border-bottom-color: rgba(220, 38, 38, 0.15) !important;
+}
+
+html.trig-legacy[data-theme="light"] .header h1,
+html.trig-legacy[data-theme="light"] .header h2 {
+    color: #0f172a !important;
+}
+
+html.trig-legacy[data-theme="light"] .video-background {
+    opacity: 0.2;
+    filter: saturate(0.7);
+}
+
+/* ── Welcome + alertes : thème sombre ── */
+html.trig-native-light[data-theme="dark"] body {
+    background: #0b1220 !important;
+    color: #e2e8f0 !important;
+}
+
+html.trig-native-light[data-theme="dark"] .header {
+    background: #111c2f !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] .header-title h1,
+html.trig-native-light[data-theme="dark"] .page-title h2,
+html.trig-native-light[data-theme="dark"] .user-name,
+html.trig-native-light[data-theme="dark"] .user-info h3 {
+    color: #f1f5f9 !important;
+}
+
+html.trig-native-light[data-theme="dark"] .header-title p,
+html.trig-native-light[data-theme="dark"] .page-title p,
+html.trig-native-light[data-theme="dark"] .user-role,
+html.trig-native-light[data-theme="dark"] .user-info p {
+    color: #94a3b8 !important;
+}
+
+html.trig-native-light[data-theme="dark"] .sidebar {
+    background: #0f172a !important;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.35) !important;
+    border-right: 1px solid #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] .nav-item {
+    color: #94a3b8 !important;
+}
+
+html.trig-native-light[data-theme="dark"] .nav-item:hover {
+    background: #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] .nav-item.active {
+    background: #1d4ed8 !important;
+    color: #fff !important;
+}
+
+html.trig-native-light[data-theme="dark"] .content,
+html.trig-native-light[data-theme="dark"] .main-content {
+    background: transparent !important;
+}
+
+html.trig-native-light[data-theme="dark"] .stat-card,
+html.trig-native-light[data-theme="dark"] .metric-card,
+html.trig-native-light[data-theme="dark"] .alert-stat-card,
+html.trig-native-light[data-theme="dark"] .tab-content {
+    background: #111c2f !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+    border-color: #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] .tab {
+    color: #94a3b8 !important;
+    border-bottom-color: transparent !important;
+}
+
+html.trig-native-light[data-theme="dark"] .tab.active {
+    color: #60a5fa !important;
+    border-bottom-color: #3b82f6 !important;
+}
+
+html.trig-native-light[data-theme="dark"] .tab:hover {
+    color: #93c5fd !important;
+}
+
+html.trig-native-light[data-theme="dark"] .tabs {
+    border-bottom-color: #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] table {
+    color: #e2e8f0 !important;
+}
+
+html.trig-native-light[data-theme="dark"] th {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+}
+
+html.trig-native-light[data-theme="dark"] td {
+    border-color: #1e293b !important;
+}
+
+html.trig-native-light[data-theme="dark"] tr:hover {
+    background: rgba(30, 41, 59, 0.6) !important;
+}
+
+/* ── Mot de passe oublié (conteneur dédié) ── */
+html.trig-legacy[data-theme="light"] .forgot-container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(241, 245, 249, 0.99) 100%) !important;
+    border: 1px solid rgba(37, 99, 235, 0.2) !important;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1) !important;
+}
+
+html.trig-legacy[data-theme="light"] .forgot-header h1,
+html.trig-legacy[data-theme="light"] .forgot-header p,
+html.trig-legacy[data-theme="light"] .forgot-logo h1 {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+html.trig-legacy[data-theme="light"] .back-button {
+    color: #475569 !important;
+    background: rgba(15, 23, 42, 0.06) !important;
+}
+
+html.trig-legacy[data-theme="light"] .btn-send {
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* ── Auth gradient simple (carte) ── */
+html.trig-auth-gradient[data-theme="light"] .card {
+    background: rgba(255, 255, 255, 0.94) !important;
+    color: #0f172a !important;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+html.trig-auth-gradient[data-theme="light"] .card h1,
+html.trig-auth-gradient[data-theme="light"] .card h2,
+html.trig-auth-gradient[data-theme="light"] .card p,
+html.trig-auth-gradient[data-theme="light"] .card label {
+    color: inherit !important;
+}
+
+html.trig-auth-gradient[data-theme="light"] input {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+/* ── Autres cartes legacy (setup, 2FA, formulaires admin) ── */
+html.trig-legacy[data-theme="light"] .setup-container,
+html.trig-legacy[data-theme="light"] .verify-container,
+html.trig-legacy[data-theme="light"] .form-container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(241, 245, 249, 0.99) 100%) !important;
+    border: 1px solid rgba(220, 38, 38, 0.15) !important;
+    box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.trig-legacy[data-theme="light"] .setup-header h1,
+html.trig-legacy[data-theme="light"] .setup-header p,
+html.trig-legacy[data-theme="light"] .verify-header h1,
+html.trig-legacy[data-theme="light"] .verify-header p {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+html.trig-legacy[data-theme="light"] .admin-info,
+html.trig-legacy[data-theme="light"] .info-box {
+    background: rgba(59, 130, 246, 0.08) !important;
+}
+
+html.trig-legacy[data-theme="light"] .admin-info p,
+html.trig-legacy[data-theme="light"] .info-box p {
+    color: #334155 !important;
+}
+
+html.trig-legacy[data-theme="light"] .password-requirements,
+html.trig-legacy[data-theme="light"] .errors {
+    color: #334155 !important;
+}
+
+html.trig-legacy[data-theme="light"] .security-note {
+    background: rgba(15, 23, 42, 0.04) !important;
+}
+
+html.trig-legacy[data-theme="light"] .security-note p {
+    color: #475569 !important;
+}
+
+html.trig-legacy[data-theme="light"] .message-container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(241, 245, 249, 0.99) 100%) !important;
+    border: 1px solid rgba(220, 38, 38, 0.15) !important;
+    box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.trig-legacy[data-theme="light"] .message-container h1,
+html.trig-legacy[data-theme="light"] .message-container .message {
+    color: #0f172a !important;
+}
+
+html.trig-legacy[data-theme="light"] .message-container .links a {
+    color: #475569 !important;
+}
+
+html.trig-legacy[data-theme="light"] .header h1 {
+    color: #0f172a !important;
+}
+
+html.trig-legacy[data-theme="light"] .table-container {
+    background: #ffffff !important;
+    border: 1px solid rgba(220, 38, 38, 0.15) !important;
+}
+
+html.trig-legacy[data-theme="light"] table th {
+    color: #475569 !important;
+    border-bottom-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html.trig-legacy[data-theme="light"] table td {
+    color: #334155 !important;
+    border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.trig-legacy[data-theme="light"] .code {
+    color: #b91c1c !important;
+}
+
+html.trig-legacy[data-theme="light"] small {
+    color: #64748b !important;
+}
