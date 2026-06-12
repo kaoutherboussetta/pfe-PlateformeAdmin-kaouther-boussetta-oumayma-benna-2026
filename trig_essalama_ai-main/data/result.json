@@ -1,0 +1,706 @@
+{
+  "zone": "Tunisie",
+  "timestamp": "2026-04-01T14:03:46.228161Z",
+  "places_count": 12,
+  "total_places_available": 91,
+  "max_places_applied": 12,
+  "grid_step_deg": 0.6,
+  "places": [
+    {
+      "place": "zone_0_0",
+      "coords": [
+        8.0,
+        30.0,
+        8.6,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 15.96,
+          "unsupervised": 0.0,
+          "global": 11.97,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3932,
+          "ndvi": 0.0913,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 11.97,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:02:32.802721Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3932
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9087
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1197
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_1",
+      "coords": [
+        8.6,
+        30.0,
+        9.2,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 15.98,
+          "unsupervised": 0.0,
+          "global": 11.99,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3935,
+          "ndvi": 0.0898,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 11.99,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:02:38.965364Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3935
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9102
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1199
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_2",
+      "coords": [
+        9.2,
+        30.0,
+        9.8,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 19.11,
+          "unsupervised": 0.0,
+          "global": 14.33,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3124,
+          "ndvi": 0.0782,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 14.33,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:02:45.254198Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3124
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9218
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1433
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_3",
+      "coords": [
+        9.8,
+        30.0,
+        10.4,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 20.19,
+          "unsupervised": 0.0,
+          "global": 15.14,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.2817,
+          "ndvi": 0.0782,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 15.14,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:02:52.263172Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.2817
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9218
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1514
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_4",
+      "coords": [
+        10.4,
+        30.0,
+        11.0,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 18.5,
+          "unsupervised": 0.0,
+          "global": 13.87,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.317,
+          "ndvi": 0.0961,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.87,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:02:58.877465Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.317
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9039
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1387
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_5",
+      "coords": [
+        11.0,
+        30.0,
+        11.6,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 17.87,
+          "unsupervised": 0.0,
+          "global": 13.41,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3324,
+          "ndvi": 0.0996,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.41,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:06.140379Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3324
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9004
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1341
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_0_6",
+      "coords": [
+        11.6,
+        30.0,
+        11.8,
+        30.6
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 17.48,
+          "unsupervised": 0.0,
+          "global": 13.11,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3411,
+          "ndvi": 0.1033,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.11,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:12.166900Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3411
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.8967
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1311
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_1_0",
+      "coords": [
+        8.0,
+        30.6,
+        8.6,
+        31.2
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 17.7,
+          "unsupervised": 0.0,
+          "global": 13.27,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3489,
+          "ndvi": 0.0836,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.27,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:18.669747Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3489
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9164
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1327
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_1_1",
+      "coords": [
+        8.6,
+        30.6,
+        9.2,
+        31.2
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 17.17,
+          "unsupervised": 0.0,
+          "global": 12.87,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3648,
+          "ndvi": 0.0827,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 12.87,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:25.553079Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3648
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9173
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1287
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_1_2",
+      "coords": [
+        9.2,
+        30.6,
+        9.8,
+        31.2
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 17.67,
+          "unsupervised": 0.0,
+          "global": 13.25,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3522,
+          "ndvi": 0.08,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.25,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:32.375188Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3522
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.92
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1325
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_1_3",
+      "coords": [
+        9.8,
+        30.6,
+        10.4,
+        31.2
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 18.96,
+          "unsupervised": 0.0,
+          "global": 14.22,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.315,
+          "ndvi": 0.0807,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 14.22,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:39.016650Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.315
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9193
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1422
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    },
+    {
+      "place": "zone_1_4",
+      "coords": [
+        10.4,
+        30.6,
+        11.0,
+        31.2
+      ],
+      "risques": {
+        "scores": {
+          "supervised": 18.19,
+          "unsupervised": 0.0,
+          "global": 13.64,
+          "niveau_global": "faible"
+        },
+        "indicators": {
+          "ndwi": -0.3285,
+          "ndvi": 0.0927,
+          "traffic_density": 0.35,
+          "rainfall_mm": 0.0
+        },
+        "dangers_detected": [],
+        "prediction": {
+          "incident_probability": 13.64,
+          "horizon": "24h"
+        },
+        "alerts": [],
+        "recommendations": [
+          "Maintenir la surveillance proactive et la collecte continue des donnees."
+        ],
+        "risk_map_update": {
+          "updated_at": "2026-04-01T14:03:46.228161Z",
+          "layers": [
+            {
+              "name": "flood_risk",
+              "value": -0.3285
+            },
+            {
+              "name": "vegetation_stress",
+              "value": 0.9073
+            },
+            {
+              "name": "traffic_pressure",
+              "value": 0.35
+            },
+            {
+              "name": "incident_probability",
+              "value": 0.1364
+            }
+          ]
+        },
+        "model_details": {
+          "computer_vision": "YOLOv8 integration expected from field report detections",
+          "multispectral_analysis": "Sentinel-2 NDWI/NDVI",
+          "deep_learning": "hybrid scoring ready for CNN/YOLO outputs"
+        }
+      }
+    }
+  ]
+}
